@@ -6,13 +6,13 @@ import java.lang.reflect.Method;
 public class Main {
 
     public static void main(String[] args) {
-        final Class<?> cls = SomeClass.class;
+        Container container = new Container();
+        Class<?> cls = container.getClass();
         Method[] methods = cls.getMethods();
-        for (Method method : methods) {
-            if (method.isAnnotationPresent(Test.class)) {
+        for (Method method: methods) {
+            if(method.isAnnotationPresent(Saver.class)){
                 try {
-                    Test ta = method.getAnnotation(Test.class);
-                    method.invoke(null, ta.a(), ta.b());
+                    method.invoke(container);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 } catch (InvocationTargetException e) {

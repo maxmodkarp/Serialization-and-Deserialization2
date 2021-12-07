@@ -7,7 +7,4 @@ import java.lang.annotation.Target;
 
 @Target(value= ElementType.METHOD)
 @Retention(value= RetentionPolicy.RUNTIME)
-public @interface Test {
-    int a();
-    int b();
-}
+public @interface Saver {}
