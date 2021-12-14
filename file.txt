@@ -1,2 +1,5 @@
-"text": "Some text"
-"num": "123"
+Container {
+"text" = "Second some text"
+"num" = "789"
+"inserted" = "Inserted{txt = Some text, num = 123}"
+}
